@@ -121,8 +121,8 @@ div.BigLogo {
 }
 
 img.BigLogoImg {
-    width: 1050px;
-    height: 500px;
+    width: min(1050px, 90vw);
+    height: auto;
 }
 
 /* Big Cloud1 */
@@ -263,11 +263,11 @@ div>p.subtitle2 {
 }
 
 button.Button {
-    font-size: 30px;
+    font-size: clamp(16px, 2vw, 30px);
     font-weight: bolder;
     background-color: #7678ED;
-    width: 300px;
-    height: 70px;
+    width: clamp(180px, 20vw, 300px);
+    height: clamp(50px, 6vh, 70px);
     border-radius: 30px;
     -webkit-box-shadow: 15px 10px 0px 0px rgba(0, 0, 0, 1);
     -moz-box-shadow: 15px 10px 0px 0px rgba(0, 0, 0, 1);
@@ -277,7 +277,8 @@ button.Button {
 div.game1>button {
     position: absolute;
     top: 1370px;
-    left: 40%;
+    left: 50%;
+    transform: translateX(-50%);
     transition-duration: 500ms;
     z-index: 3;
     animation: ChooseStory linear;
@@ -299,7 +300,8 @@ div.game1>button:hover {
 div.game2>button {
     position: absolute;
     top: 1570px;
-    left: 40%;
+    left: 50%;
+    transform: translateX(-50%);
     transition-duration: 500ms;
     z-index: 3;
     animation: ChooseStory linear;
@@ -321,7 +323,8 @@ div.game2>button:hover {
 div.game3>button {
     position: absolute;
     top: 1770px;
-    left: 40%;
+    left: 50%;
+    transform: translateX(-50%);
     transition-duration: 500ms;
     z-index: 3;
     animation: ChooseStory linear;
@@ -688,5 +691,147 @@ div>button#Play {
 
     div.Storysummary {
         border-width: 6px;
+    }
+}
+
+/* iPhone-specific tuning */
+@media (max-width: 430px) {
+
+    /* iPhone 14/15 Pro Max width */
+    div>p.subtitle2 {
+        top: 78vh;
+        left: 6%;
+        font-size: 36px;
+    }
+
+    div.game1>button {
+        top: 90vh;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    div.game2>button {
+        top: 102vh;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    div.game3>button {
+        top: 114vh;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    div.Storysummary {
+        top: 92vh;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 92vw;
+    }
+
+    div>p#SummaryText {
+        top: 82vh;
+        left: 6%;
+    }
+
+    div>p#SummaryTextSubtitle {
+        top: 96vh;
+        left: 4%;
+        right: auto;
+        width: 92vw;
+    }
+}
+
+@media (max-width: 414px) {
+
+    /* iPhone 11/12/13/14 */
+    div>p.subtitle2 {
+        top: 76vh;
+        font-size: 34px;
+    }
+
+    div.game1>button {
+        top: 88vh;
+    }
+
+    div.game2>button {
+        top: 100vh;
+    }
+
+    div.game3>button {
+        top: 112vh;
+    }
+}
+
+@media (max-width: 390px) {
+
+    /* iPhone 12/13/14 Pro */
+    div>p.subtitle2 {
+        top: 74vh;
+        font-size: 32px;
+    }
+
+    div.game1>button {
+        top: 86vh;
+    }
+
+    div.game2>button {
+        top: 98vh;
+    }
+
+    div.game3>button {
+        top: 110vh;
+    }
+}
+
+@media (max-width: 375px) {
+
+    /* iPhone 8/SE/mini */
+    div>p.subtitle2 {
+        top: 72vh;
+        font-size: 30px;
+    }
+
+    div.game1>button {
+        top: 84vh;
+    }
+
+    div.game2>button {
+        top: 96vh;
+    }
+
+    div.game3>button {
+        top: 108vh;
+    }
+}
+
+@media (max-width: 360px) {
+
+    /* small Android */
+    div>p.subtitle2 {
+        top: 70vh;
+        font-size: 28px;
+    }
+}
+
+/* Laptop 15.6" common widths (1366x768 and 1536x864) */
+@media (min-width: 1360px) and (max-width: 1400px) {
+    div>p.subtitle2 {
+        left: 24%;
+        font-size: 88px;
+    }
+
+    div.game1>button,
+    div.game2>button,
+    div.game3>button {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media (min-width: 1500px) and (max-width: 1600px) {
+    div>p.subtitle2 {
+        left: 26%;
+        font-size: 96px;
     }
 }
