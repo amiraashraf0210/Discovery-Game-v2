@@ -1,2 +1,10 @@
-node_modules/
-.env
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor-specific files
+.vscode/
+.idea/
+
+# Log files
+*.log

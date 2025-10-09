@@ -4,9 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
+<filesMatch "\.(html|css|js|png|jpg|jpeg|webp|gif)$">
+    # Do not cache HTML files to always get the latest story state
+    <If "%{REQUEST_URI} =~ m/\.html$/">
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+    </If>
+    # Cache other assets for a longer period
+    <Else>
+        Header set Cache-Control "public, max-age=604800, immutable"
+    </Else>
+</filesMatch>
+
+# Security Headers
+Header set X-Content-Type-Options "nosniff"
   <title>Hangman Game</title>
   <link rel="stylesheet" href="main.css?v=3">
 </head>
