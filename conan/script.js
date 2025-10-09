@@ -1,9 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // enforce 100% scale on this game page
-    document.documentElement.style.zoom = '1';
-    document.body.style.zoom = '1';
-    document.body.style.transform = 'scale(1)';
-    document.body.style.transformOrigin = '0 0';
     const caseText = document.getElementById("case-text");
     const nextArrow = document.getElementById("next-arrow");
     const prevArrow = document.getElementById("prev-arrow");

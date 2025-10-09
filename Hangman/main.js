@@ -1,8 +1,4 @@
-// Normalize scale to 100%
-document.documentElement.style.zoom = '1';
-document.body.style.zoom = '1';
-document.body.style.transform = 'scale(1)';
-document.body.style.transformOrigin = '0 0';
+// removed JS zoom enforcement; rely on viewport meta for responsiveness
 
 const letters = "abcdefghijklmnopqrstuvwxyz";
 

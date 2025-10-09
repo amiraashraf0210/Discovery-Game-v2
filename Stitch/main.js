@@ -79,12 +79,7 @@ function resetState() {
   }
 }
 
-function enforceScale100() {
-  document.documentElement.style.zoom = '1';
-  document.body.style.zoom = '1';
-  document.body.style.transform = 'scale(1)';
-  document.body.style.transformOrigin = '0 0';
-}
+// removed JS zoom enforcement to keep consistent scale across devices
 
 function resetToDoorsScreen() {
   helpText.textContent = "Select a path to continue";
@@ -100,9 +95,7 @@ function resetToDoorsScreen() {
   resetState();
 }
 
-// Normalize scale to 100%
-enforceScale100();
-window.addEventListener('resize', enforceScale100);
+// Normalize handled by CSS/viewport; no JS zoom here
 
 // Handle browser back to avoid broken state
 try {

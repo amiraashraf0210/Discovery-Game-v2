@@ -22,15 +22,7 @@ let Game2 = false;
 let Game3 = false;
 // Variables /////////////////////////////////////
 
-function enforceScale100() {
-  document.documentElement.style.zoom = '1';
-  document.body.style.zoom = '1';
-  document.body.style.transform = 'scale(1)';
-  document.body.style.transformOrigin = '0 0';
-}
-
-enforceScale100();
-window.addEventListener('resize', enforceScale100);
+// removed JS zoom enforcement to avoid inconsistent scaling across pages
 
 function resetHomeLayout() {
   // reset menu overlay and all moving parts
@@ -52,7 +44,6 @@ function resetHomeLayout() {
 
 // When returning from a game via browser back, reset layout cleanly
 window.addEventListener('pageshow', (e) => {
-  enforceScale100();
   resetHomeLayout();
 });
 
