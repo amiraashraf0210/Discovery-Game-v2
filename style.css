@@ -477,3 +477,216 @@ div>button#Play {
     animation-range: 0% cover 20%;
     transition: 1s ease;
 }
+
+/* =================== Responsive =================== */
+@media (max-width: 1200px) {
+    img.BigLogoImg {
+        width: 70vw;
+        height: auto;
+    }
+
+    div>p.subtitle2 {
+        left: 20%;
+        font-size: 72px;
+    }
+
+    button.Button {
+        font-size: 26px;
+        width: 260px;
+        height: 64px;
+    }
+
+    div.game1>button {
+        left: 38%;
+    }
+
+    div.game2>button {
+        left: 38%;
+    }
+
+    div.game3>button {
+        left: 38%;
+    }
+
+    div.Storysummary {
+        width: 520px;
+        height: 360px;
+    }
+
+    div>p#SummaryText {
+        font-size: 72px;
+    }
+
+    div>p#SummaryTextSubtitle {
+        width: 560px;
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 992px) {
+    img.BigLogoImg {
+        width: 80vw;
+        height: auto;
+    }
+
+    div>p.subtitle {
+        left: 10%;
+        font-size: 22px;
+    }
+
+    p.Quote {
+        left: 4%;
+        font-size: 36px;
+    }
+
+    div>p.subtitle2 {
+        left: 16%;
+        font-size: 56px;
+    }
+
+    button.Button {
+        font-size: 22px;
+        width: 220px;
+        height: 58px;
+    }
+
+    div.game1>button,
+    div.game2>button,
+    div.game3>button {
+        left: 36%;
+    }
+
+    div.Storysummary {
+        width: 80vw;
+        height: auto;
+        left: 2000px;
+    }
+
+    div>p#SummaryText {
+        font-size: 56px;
+    }
+
+    div>p#SummaryTextSubtitle {
+        width: 80vw;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* simplify scene effects on mobile */
+    div.cloud,
+    div.cloud2,
+    div.Scloud1,
+    div.Scloud2,
+    div.DTransition {
+        display: none;
+    }
+
+    div>p.subtitle {
+        top: 680px;
+        left: 6%;
+        font-size: 18px;
+    }
+
+    p.Quote {
+        left: 6%;
+        right: 6%;
+        font-size: 26px;
+        text-align: left;
+    }
+
+    div>p.subtitle2 {
+        top: 980px;
+        left: 8%;
+        font-size: 42px;
+    }
+
+    button.Button {
+        font-size: 18px;
+        width: 200px;
+        height: 54px;
+    }
+
+    div.game1>button {
+        top: 1220px;
+        left: 30%;
+    }
+
+    div.game2>button {
+        top: 1380px;
+        left: 30%;
+    }
+
+    div.game3>button {
+        top: 1540px;
+        left: 30%;
+    }
+
+    div.Storysummary {
+        top: 1260px;
+        width: 88vw;
+        height: auto;
+    }
+
+    div>p#SummaryText {
+        top: 1140px;
+        font-size: 40px;
+    }
+
+    div>p#SummaryTextSubtitle {
+        top: 1320px;
+        width: 90vw;
+        font-size: 16px;
+        right: -2000px;
+    }
+
+    div>button#Back {
+        top: 1640px;
+    }
+
+    div>button#Play {
+        top: 1640px;
+    }
+}
+
+@media (max-width: 480px) {
+    img.BigLogoImg {
+        width: 88vw;
+    }
+
+    div>p.subtitle {
+        top: 640px;
+        font-size: 16px;
+    }
+
+    p.Quote {
+        font-size: 22px;
+    }
+
+    div>p.subtitle2 {
+        font-size: 34px;
+    }
+
+    button.Button {
+        width: 180px;
+        height: 50px;
+        font-size: 16px;
+    }
+
+    div.game1>button {
+        left: 26%;
+    }
+
+    div.game2>button {
+        left: 26%;
+    }
+
+    div.game3>button {
+        left: 26%;
+    }
+
+    div.Storysummary {
+        border-width: 6px;
+    }
+}
