@@ -277,8 +277,7 @@ button.Button {
 div.game1>button {
     position: absolute;
     top: 1370px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 40%;
     transition-duration: 500ms;
     z-index: 3;
     animation: ChooseStory linear;
@@ -300,8 +299,7 @@ div.game1>button:hover {
 div.game2>button {
     position: absolute;
     top: 1570px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 40%;
     transition-duration: 500ms;
     z-index: 3;
     animation: ChooseStory linear;
@@ -323,8 +321,7 @@ div.game2>button:hover {
 div.game3>button {
     position: absolute;
     top: 1770px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 40%;
     transition-duration: 500ms;
     z-index: 3;
     animation: ChooseStory linear;
