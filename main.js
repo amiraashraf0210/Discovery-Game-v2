@@ -43,14 +43,14 @@ let Game3 = false;
 button.addEventListener('mouseover', () => {
   div.style.opacity = 1;
   div.style.backgroundColor = 'rgb(0, 74, 74)';
-  s1Img1.style.left = "100px";
+  s1Img1.style.left = "150px";
   s1Img2.style.left = "1100px";
 });
 
 button.addEventListener('mouseout', () => {
   div.style.opacity = 0;
   div.style.backgroundColor = 'lightgray';
-  s1Img1.style.left = "-350px";
+  s1Img1.style.left = "-450px";
   s1Img2.style.left = "1900px";
   if (clicked == true) {
     div.style.opacity = 1;
@@ -79,14 +79,14 @@ button.addEventListener('click', () => {
 button2.addEventListener('mouseover', () => {
   div.style.opacity = 1;
   div.style.backgroundColor = 'rgb(49,92,148)';
-  s2Img1.style.left = "100px";
+  s2Img1.style.left = "150px";
   s2Img2.style.left = "1100px";
 });
 
 button2.addEventListener('mouseout', () => {
   div.style.opacity = 0;
   div.style.backgroundColor = 'lightgray';
-  s2Img1.style.left = "-600px";
+  s2Img1.style.left = "-700px";
   s2Img2.style.left = "1900px";
   if (clicked == true) {
     div.style.opacity = 1;
