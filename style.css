@@ -425,10 +425,10 @@ div.summaryStory {
 div.Storysummary {
     position: fixed;
     top: 50%;
-    left: 50%;
-    transform: translate(-380px, -50%);
+    left: 8%;
+    transform: translateY(-50%);
     width: 450px;
-    height: 380px;
+    height: 320px;
     border-radius: 30px;
     border-style: solid;
     border-color: black;
@@ -441,11 +441,10 @@ div.Storysummary {
 
 div>p#SummaryText {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(100px, -180px);
+    top: 25%;
+    right: 15%;
     color: black;
-    font-size: 80px;
+    font-size: 70px;
     font-family: cursive;
     font-weight: bolder;
     z-index: 6;
@@ -459,10 +458,10 @@ div>p#SummaryTextSubtitle {
     text-align: left;
     width: 500px;
     top: 50%;
-    left: 50%;
-    transform: translate(100px, -50%);
+    right: 15%;
+    transform: translateY(-50%);
     color: black;
-    font-size: 24px;
+    font-size: 22px;
     font-family: cursive;
     font-weight: bolder;
     z-index: 6;
@@ -473,36 +472,34 @@ div>p#SummaryTextSubtitle {
 
 div>button#Back {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(100px, 110px);
-    width: 220px;
+    top: 70%;
+    right: calc(15% + 260px);
+    width: 240px;
     height: 58px;
-    font-size: 24px;
+    font-size: 25px;
     transition: all 0.3s ease;
     z-index: 3;
 }
 
 div>button#Back:hover {
     background-color: #8B4513 !important;
-    transform: translate(100px, 110px) scale(1.05);
+    transform: scale(1.05);
 }
 
 div>button#Play {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(340px, 110px);
-    width: 220px;
+    top: 70%;
+    right: 15%;
+    width: 240px;
     height: 58px;
-    font-size: 24px;
+    font-size: 25px;
     transition: all 0.3s ease;
     z-index: 3;
 }
 
 div>button#Play:hover {
     background-color: #8B4513 !important;
-    transform: translate(340px, 110px) scale(1.05);
+    transform: scale(1.05);
 }
 
 
