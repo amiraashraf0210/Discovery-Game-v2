@@ -179,7 +179,7 @@ body {
 }
 
 .box .grid-container .close-btn:hover {
-    transform: scale(1);
+    transform: scale(0.9);
 }
 
 .box .grid-container i {
@@ -452,3 +452,34 @@ img {
 }
 
 /* End grid container */
+
+/* Menu Button */
+.menu-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(246, 235, 218, 0.4);
+    text-decoration: none;
+    z-index: 100;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(5px);
+}
+
+.menu-button svg {
+    width: 26px;
+    height: 26px;
+}
+
+.menu-button:hover {
+    color: rgba(246, 235, 218, 1);
+    background: rgba(0, 0, 0, 0.65);
+    transform: scale(1.1);
+}

@@ -56,57 +56,6 @@ photoContainer.appendChild(photoDescription);
 
 document.body.appendChild(photoContainer);
 
-function resetState() {
-  clicked = false;
-  keyFound = false;
-  symbolFound = false;
-  // Reset key overlay (dark path)
-  const keyOverlay = document.getElementById('overlayImageKey');
-  if (keyOverlay) {
-    keyOverlay.style.display = 'block';
-    keyOverlay.style.opacity = '0';
-    keyOverlay.style.zIndex = '-1';
-    keyOverlay.style.pointerEvents = 'none';
-  }
-  // Reset temple symbol overlay (cave)
-  const templeOverlay = document.getElementById('overlayImageTemple');
-  if (templeOverlay) {
-    templeOverlay.style.display = 'block';
-    templeOverlay.style.opacity = '0';
-    templeOverlay.style.zIndex = '-1';
-    templeOverlay.style.pointerEvents = 'none';
-    templeOverlay.style.filter = 'brightness(1)';
-  }
-}
-
-// removed JS zoom enforcement to keep consistent scale across devices
-
-function resetToDoorsScreen() {
-  helpText.textContent = "Select a path to continue";
-  storyMessage.style.opacity = '1';
-  blackScreen.style.visibility = 'hidden';
-  blackScreen.style.opacity = '0';
-  choicesContainer.style.display = 'none';
-  Result1.style.opacity = '0';
-  betweenText.style.display = 'none';
-  document.body.style.backgroundImage = '';
-  container.style.display = 'block';
-  doors.forEach(door => { door.style.pointerEvents = 'auto'; });
-  resetState();
-}
-
-// Normalize handled by CSS/viewport; no JS zoom here
-
-// Handle browser back to avoid broken state
-try {
-  history.pushState(null, '', location.href);
-  window.addEventListener('popstate', (event) => {
-    event.preventDefault();
-    resetToDoorsScreen();
-    history.pushState(null, '', location.href);
-  });
-} catch (_) { }
-
 function setChoicesStyles() {
   choicesContainer.style.display = 'flex';
   choicesContainer.style.flexDirection = 'row';
@@ -281,13 +230,6 @@ doors.forEach(door => {
 
   door.addEventListener('click', (e) => {
     const path = e.target.getAttribute('data-path');
-    // ensure overlays exist again (in case a previous run removed them)
-    if (!document.getElementById('overlayImageKey')) {
-      document.body.appendChild(overlayImage);
-    }
-    if (!document.getElementById('overlayImageTemple')) {
-      document.body.appendChild(overlayImageTemple);
-    }
     handlePathSelection(path);
 
   });
@@ -297,8 +239,6 @@ function handlePathSelection(path) {
   blackScreen.style.visibility = 'visible';
   blackScreen.style.opacity = '1';
   helpText.textContent = "Loading...";
-  // start each path with clean state to avoid leakage from previous path
-  resetState();
 
   let message = '';
   let choices = [];
@@ -373,8 +313,6 @@ function showChoices(message, choices, resultMessage) {
   choicesContainer.style.display = 'flex';
   choicesContainer.style.opacity = '0';
   choicesContainer.style.transition = 'opacity 1s ease';
-  // hide back button by default when showing new choices
-  if (choiceBack) { choiceBack.style.display = 'none'; }
 
   choice1.textContent = choices[0] || '';
   choice2.textContent = choices[1] || '';
@@ -439,7 +377,6 @@ choice2.addEventListener('click', () => {
   Result1.style.opacity = "0";
   document.body.style.backgroundImage = previousBackground;
   container.style.display = 'block';
-  resetState();
 
   doors.forEach(door => {
     door.style.pointerEvents = 'auto';
@@ -486,7 +423,6 @@ choice1.addEventListener('click', () => {
 
       document.body.style.backgroundImage = previousBackground;
       container.style.display = 'block';
-      resetState();
 
       doors.forEach(door => {
         door.style.pointerEvents = 'auto';
@@ -593,10 +529,7 @@ choice1.addEventListener('click', () => {
 
     overlayImage.addEventListener('click', () => {
       overlayImage.style.pointerEvents = 'none';
-      // hide instead of remove to allow replay from other paths
-      overlayImage.style.display = 'block';
-      overlayImage.style.opacity = '0';
-      overlayImage.style.zIndex = '-1';
+      overlayImage.remove();
       keyFound = true;
       clicked = true;
       overlayImage.style.opacity = '0';
@@ -638,8 +571,6 @@ choice1.addEventListener('click', () => {
 
         document.body.style.backgroundImage = previousBackground;
         container.style.display = 'block';
-        resetState();
-        resetState();
 
         doors.forEach(door => {
           door.style.pointerEvents = 'auto';
@@ -683,7 +614,6 @@ choice1.addEventListener('click', () => {
           document.body.style.backgroundImage = previousBackground;
           container.style.display = 'block';
           choiceBack.style.display = 'none';
-          resetState();
 
           doors.forEach(door => {
             door.style.pointerEvents = 'auto';
@@ -694,8 +624,7 @@ choice1.addEventListener('click', () => {
           choice3.textContent = null;
           choice4.textContent = null;
           choice5.textContent = null;
-          // hide instead of remove so flow works when revisiting
-          overlayImage.style.display = 'none';
+          overlayImage.remove();
           helpText.textContent = "Select a path to continue";
           storyMessage.style.opacity = '0';
           choicesContainer.style.display = 'none';
@@ -704,7 +633,6 @@ choice1.addEventListener('click', () => {
 
           document.body.style.backgroundImage = previousBackground;
           container.style.display = 'block';
-          resetState();
 
           doors.forEach(door => {
             door.style.pointerEvents = 'auto';
@@ -809,10 +737,7 @@ choice1.addEventListener('click', () => {
     choice3.textContent = 'Explore the symbols';
 
     choice4.onclick = () => {
-      // hide instead of remove so it can be reused later
-      overlayImageTemple.style.pointerEvents = 'none';
-      overlayImageTemple.style.opacity = '0';
-      overlayImageTemple.style.zIndex = '-1';
+      overlayImageTemple.remove();
       choice5.textContent = 'Go Back to three doors...';
       storyMessage.style.opacity = '1';
       choicesContainer.style.display = 'block';
@@ -824,13 +749,7 @@ choice1.addEventListener('click', () => {
 
       const caveSound = new Audio('sounds/Destruction.wav');
       caveSound.loop = false;
-      caveSound.volume = 0.8;
-      caveSound.currentTime = 0;
-      // ensure playback on user gesture, fallback if promise rejected
-      Promise.resolve(caveSound.play()).catch(() => {
-        caveSound.muted = false;
-        caveSound.play().catch(() => { });
-      });
+      caveSound.play();
 
       Result1.textContent = resultMessage[3];
       Result1.style.opacity = "1";
@@ -869,11 +788,7 @@ choice1.addEventListener('click', () => {
       setTimeout(() => {
         Result1.style.opacity = "0";
         Result1.style.bottom = "10%";
-        if (symbolFound == true) {
-          choicesContainer.style.display = 'flex';
-          // Do not show generic Back button in cave path
-          if (choiceBack) { choiceBack.style.display = 'none'; }
-        }
+        betweenText.style.display = 'none';
       }, 3000);
 
       overlayImageTemple.addEventListener('mouseenter', () => {
@@ -968,7 +883,6 @@ choice1.addEventListener('click', () => {
         container.style.display = 'block';
         choiceBack.style.display = 'none';
         betweenText.style.display = 'none';
-        resetState();
 
         doors.forEach(door => {
           door.style.pointerEvents = 'auto';
@@ -987,7 +901,6 @@ choice1.addEventListener('click', () => {
 
         document.body.style.backgroundImage = previousBackground;
         container.style.display = 'block';
-        resetState();
 
         doors.forEach(door => {
           door.style.pointerEvents = 'auto';

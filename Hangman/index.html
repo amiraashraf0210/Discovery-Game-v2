@@ -4,24 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<filesMatch "\.(html|css|js|png|jpg|jpeg|webp|gif)$">
-    # Do not cache HTML files to always get the latest story state
-    <If "%{REQUEST_URI} =~ m/\.html$/">
-        Header set Cache-Control "no-cache, no-store, must-revalidate"
-    </If>
-    # Cache other assets for a longer period
-    <Else>
-        Header set Cache-Control "public, max-age=604800, immutable"
-    </Else>
-</filesMatch>
-
-# Security Headers
-Header set X-Content-Type-Options "nosniff"
   <title>Hangman Game</title>
-  <link rel="stylesheet" href="main.css?v=3">
+  <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
+  <a href="../index.html" class="menu-button" title="Back to Main Menu">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+    </svg>
+  </a>
   <div class="container">
     <div class="game-info">
       <div class="game-name">Hangman</div>
@@ -53,12 +45,12 @@ Header set X-Content-Type-Options "nosniff"
   <audio id="fail" src="audio/fail.mp4" preload="auto"></audio>
 
   <div class="back-button">
-    <a href="index.html">Go Back to our Website</a>
+    <a href="../index.html">Go Back to our Website</a>
   </div>
 
 
 
-  <script src="main.js?v=3"></script>
+  <script src="main.js"></script>
 </body>
 
 </html>

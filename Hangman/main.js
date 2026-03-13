@@ -1,5 +1,3 @@
-// removed JS zoom enforcement; rely on viewport meta for responsiveness
-
 const letters = "abcdefghijklmnopqrstuvwxyz";
 
 // Get Array From Letters
@@ -32,7 +30,7 @@ lettersArray.forEach(letter => {
 const words = {
   programming: ["php", "javascript", "go", "scala", "fortran", "r", "mysql", "python"],
   movies: ["Prestige", "Inception", "Parasite", "Interstellar", "Whiplash", "Memento", "Coco", "Up"],
-  people: ["Andrew Victor", "Andro naem", "Islam", "Ahmed", " Amira ashraf", "Dr Hala"],
+  people: ["Andrew Victor","Andro naem", "Islam", "Ahmed", " Amira ashraf", "Dr Hala"],
   countries: ["Syria", "Palestine", "Morocco", "Egypt", "Italy", "Qatar"]
 }
 
@@ -160,7 +158,7 @@ document.addEventListener("click", (e) => {
       // Play Success Sound
       document.getElementById("success").play();
 
-      if (correctAttempts === lettersAndSpace.filter(l => l !== '').length) {
+      if (correctAttempts === lettersAndSpace.filter(l => l !== '').length){
 
         winGame();
         lettersContainer.classList.add("finished");
@@ -196,7 +194,7 @@ function winGame() {
   // Create Popup Div
   let div = document.createElement("div");
 
-  let level = 8 - wrongAttempts;
+let level = 8 - wrongAttempts;
   // Create Text
   let divText = document.createTextNode(`Congratulations! You Won. Level: ${level}, Mistakes: ${wrongAttempts}`);
 

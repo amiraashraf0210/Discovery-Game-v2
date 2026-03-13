@@ -1,3 +1,16 @@
+// Handle scroll position on page load
+window.addEventListener('load', () => {
+  // Check if it's a page refresh (F5 or Ctrl+R)
+  if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
+    // On refresh, scroll to top
+    window.scrollTo(0, 0);
+  } else if (!sessionStorage.getItem('hasVisited')) {
+    // First time visiting, scroll to top
+    sessionStorage.setItem('hasVisited', 'true');
+    window.scrollTo(0, 0);
+  }
+});
+
 // Variables /////////////////////////////////////
 const button = document.getElementById('Story1');
 const button2 = document.getElementById('Story2');
@@ -11,6 +24,7 @@ const s2Img2 = document.getElementById('S2_img2');
 const s3Img1 = document.getElementById('S3_img1');
 const s3Img2 = document.getElementById('S3_img2');
 const storySummary = document.getElementById('Storysummary');
+const summaryStory = document.querySelector('.summaryStory');
 const storyTitle = document.getElementById('SummaryText')
 const storySubtitle = document.getElementById('SummaryTextSubtitle')
 const BackButton = document.getElementById('Back');
@@ -21,31 +35,6 @@ let Game1 = false;
 let Game2 = false;
 let Game3 = false;
 // Variables /////////////////////////////////////
-
-// removed JS zoom enforcement to avoid inconsistent scaling across pages
-
-function resetHomeLayout() {
-  // reset menu overlay and all moving parts
-  div.style.opacity = 0;
-  div.style.backgroundColor = 'lightgray';
-  subtitleChoosing.style.left = "28%";
-  button.style.left = "40%";
-  button2.style.left = "40%";
-  button3.style.left = "40%";
-  const storySummary = document.getElementById('Storysummary');
-  const storyTitle = document.getElementById('SummaryText');
-  const storySubtitle = document.getElementById('SummaryTextSubtitle');
-  storySummary.style.left = "2000px";
-  storyTitle.style.right = "-2000px";
-  storySubtitle.style.right = "-2000px";
-  BackButton.style.left = "150%";
-  PlayButton.style.left = "130%";
-}
-
-// When returning from a game via browser back, reset layout cleanly
-window.addEventListener('pageshow', (e) => {
-  resetHomeLayout();
-});
 
 
 
@@ -73,40 +62,22 @@ button.addEventListener('mouseout', () => {
 button.addEventListener('click', () => {
   clicked = true;
   Game1 = true;
-  subtitleChoosing.style.left = "-50%";
-  button.style.left = "-30%";
-  button2.style.left = "-40%";
-  button3.style.left = "-40%";
-  storySummary.style.left = "150px";
-  storyTitle.style.right = "360px";
-  storySubtitle.style.right = "160px";
-  BackButton.style.left = "71%";
-  BackButton.style.backgroundColor = "brown";
-  PlayButton.style.left = "52%";
-  PlayButton.style.backgroundColor = "brown";
+  summaryStory.style.display = 'block';
+  summaryStory.style.backgroundColor = 'rgb(0, 74, 74)';
+  setTimeout(() => {
+    storySummary.style.left = "150px";
+    storyTitle.style.right = "360px";
+    storySubtitle.style.right = "160px";
+    BackButton.style.left = "71%";
+    BackButton.style.backgroundColor = "brown";
+    PlayButton.style.left = "52%";
+    PlayButton.style.backgroundColor = "brown";
+  }, 50);
   storyTitle.innerHTML = "Stitch";
   storyTitle.style.color = "White";
   storySubtitle.innerHTML = "Stitch embarks on an adventurous quest through a dense forest, discovers an ancient temple, and uncovers a hidden treasure in a mysterious cave filled with puzzles and secrets.";
   storySubtitle.style.color = "White";
   storySummary.style.backgroundImage = "url('Image/Story1Image.jpg')";
-
-});
-
-BackButton.addEventListener('click', () => {
-  clicked = false;
-  Game1 = false;
-  subtitleChoosing.style.left = "28%";
-  button.style.left = "40%";
-  button.style.transition = "0.7s";
-  button2.style.left = "40%";
-  button3.style.left = "40%";
-  storySummary.style.left = "2000px";
-  storyTitle.style.right = "-2000px";
-  storySubtitle.style.right = "-2000px";
-  BackButton.style.left = "150%";
-  PlayButton.style.left = "130%";
-  div.style.opacity = 0;
-  div.style.backgroundColor = 'lightgray';
 
 });
 
@@ -135,40 +106,22 @@ button2.addEventListener('mouseout', () => {
 button2.addEventListener('click', () => {
   clicked = true;
   Game2 = true;
-  subtitleChoosing.style.left = "-50%";
-  button.style.left = "-30%";
-  button2.style.left = "-40%";
-  button3.style.left = "-40%";
-  storySummary.style.left = "150px";
-  storyTitle.style.right = "360px";
-  storySubtitle.style.right = "160px";
-  BackButton.style.left = "71%";
-  BackButton.style.backgroundColor = "brown";
-  PlayButton.style.left = "52%";
-  PlayButton.style.backgroundColor = "brown";
+  summaryStory.style.display = 'block';
+  summaryStory.style.backgroundColor = 'rgb(49,92,148)';
+  setTimeout(() => {
+    storySummary.style.left = "150px";
+    storyTitle.style.right = "360px";
+    storySubtitle.style.right = "160px";
+    BackButton.style.left = "71%";
+    BackButton.style.backgroundColor = "brown";
+    PlayButton.style.left = "52%";
+    PlayButton.style.backgroundColor = "brown";
+  }, 50);
   storyTitle.innerHTML = "Conan";
   storyTitle.style.color = "White";
   storySubtitle.innerHTML = "A game inspired by Conan, featuring thrilling puzzles, evidence analysis, and character interrogations to guess the culprit and solve the mystery.";
   storySubtitle.style.color = "White";
   storySummary.style.backgroundImage = "url('Image/Story2Image.jpg')";
-
-});
-
-BackButton.addEventListener('click', () => {
-  clicked = false;
-  Game2 = false;
-  subtitleChoosing.style.left = "28%";
-  button.style.left = "40%";
-  button.style.transition = "0.7s";
-  button2.style.left = "40%";
-  button3.style.left = "40%";
-  storySummary.style.left = "2000px";
-  storyTitle.style.right = "-2000px";
-  storySubtitle.style.right = "-2000px";
-  BackButton.style.left = "150%";
-  PlayButton.style.left = "130%";
-  div.style.opacity = 0;
-  div.style.backgroundColor = 'lightgray';
 
 });
 
@@ -196,17 +149,17 @@ button3.addEventListener('mouseout', () => {
 button3.addEventListener('click', () => {
   clicked = true;
   Game3 = true;
-  subtitleChoosing.style.left = "-50%";
-  button.style.left = "-30%";
-  button2.style.left = "-40%";
-  button3.style.left = "-40%";
-  storySummary.style.left = "150px";
-  storyTitle.style.right = "290px";
-  storySubtitle.style.right = "160px";
-  BackButton.style.left = "71%";
-  BackButton.style.backgroundColor = "brown";
-  PlayButton.style.left = "52%";
-  PlayButton.style.backgroundColor = "brown";
+  summaryStory.style.display = 'block';
+  summaryStory.style.backgroundColor = 'rgb(0, 124, 17)';
+  setTimeout(() => {
+    storySummary.style.left = "150px";
+    storyTitle.style.right = "290px";
+    storySubtitle.style.right = "160px";
+    BackButton.style.left = "71%";
+    BackButton.style.backgroundColor = "brown";
+    PlayButton.style.left = "52%";
+    PlayButton.style.backgroundColor = "brown";
+  }, 50);
   storyTitle.innerHTML = "Hangman";
   storyTitle.style.color = "White";
   storySubtitle.innerHTML = "The classic Hangman game where you guess letters to complete the word before the hangman is drawn. A challenge for your wit and language skills.";
@@ -215,22 +168,22 @@ button3.addEventListener('click', () => {
 
 });
 
+// Unified Back Button Handler
 BackButton.addEventListener('click', () => {
   clicked = false;
+  Game1 = false;
+  Game2 = false;
   Game3 = false;
-  subtitleChoosing.style.left = "28%";
-  button.style.left = "40%";
-  button.style.transition = "0.7s";
-  button2.style.left = "40%";
-  button3.style.left = "40%";
+
   storySummary.style.left = "2000px";
   storyTitle.style.right = "-2000px";
   storySubtitle.style.right = "-2000px";
   BackButton.style.left = "150%";
   PlayButton.style.left = "130%";
-  div.style.opacity = 0;
-  div.style.backgroundColor = 'lightgray';
 
+  setTimeout(() => {
+    summaryStory.style.display = 'none';
+  }, 1000);
 });
 
 ///////////////////////////////////////////////////////////

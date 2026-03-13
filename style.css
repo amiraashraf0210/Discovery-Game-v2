@@ -91,6 +91,12 @@ body {
     margin: 0px;
     background-color: #7678ED;
     overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Ensure elements start in correct position */
+html {
+    scroll-behavior: smooth;
 }
 
 div.navnames {
@@ -121,8 +127,8 @@ div.BigLogo {
 }
 
 img.BigLogoImg {
-    width: min(1050px, 90vw);
-    height: auto;
+    width: 1050px;
+    height: 500px;
 }
 
 /* Big Cloud1 */
@@ -263,11 +269,11 @@ div>p.subtitle2 {
 }
 
 button.Button {
-    font-size: clamp(16px, 2vw, 30px);
+    font-size: 30px;
     font-weight: bolder;
     background-color: #7678ED;
-    width: clamp(180px, 20vw, 300px);
-    height: clamp(50px, 6vh, 70px);
+    width: 300px;
+    height: 70px;
     border-radius: 30px;
     -webkit-box-shadow: 15px 10px 0px 0px rgba(0, 0, 0, 1);
     -moz-box-shadow: 15px 10px 0px 0px rgba(0, 0, 0, 1);
@@ -341,7 +347,7 @@ div.game3>button:hover {
 }
 
 div#menu {
-    opacity: 0;
+    opacity: 1;
     position: absolute;
     top: 910px;
     width: 100%;
@@ -399,11 +405,24 @@ div.S2_img2>img {
     width: 110%;
 }
 
+div.summaryStory {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #7678ED;
+    z-index: 1000;
+    display: none;
+    overflow: hidden;
+}
+
 div.Storysummary {
     /* left 100 / -800 left */
     position: absolute;
-    top: 1350px;
+    top: 50%;
     left: 2000px;
+    transform: translateY(-50%);
     width: 600px;
     height: 400px;
     border-radius: 30px;
@@ -414,25 +433,21 @@ div.Storysummary {
     background-size: cover;
     z-index: 6;
     transition: 1s ease;
-    animation: ChooseStory linear;
-    animation-timeline: view();
-    animation-range: 0% cover 40%;
 }
 
 div>p#SummaryText {
     /* right 400 */
     position: absolute;
-    top: 1250px;
+    top: 30%;
     right: -2000px;
+    transform: translateY(-50%);
     color: black;
     font-size: 100px;
     font-family: cursive;
     font-weight: bolder;
     z-index: 6;
     transition: 1s ease;
-    animation: ChooseStory linear;
-    animation-timeline: view();
-    animation-range: 0% cover 40%;
+    margin: 0;
 }
 
 
@@ -441,394 +456,33 @@ div>p#SummaryTextSubtitle {
     position: absolute;
     text-align: center;
     width: 700px;
-    top: 1450px;
+    top: 50%;
     right: -2000px;
+    transform: translateY(-50%);
     color: black;
     font-size: 26px;
     font-family: cursive;
     font-weight: bolder;
     z-index: 6;
     transition: 1s ease;
-    animation: ChooseStory linear;
-    animation-timeline: view();
-    animation-range: 0% cover 40%;
+    margin: 0;
+    line-height: 1.5;
 }
 
 div>button#Back {
     position: absolute;
-    top: 1670px;
+    top: 68%;
     left: 150%;
     transition-duration: 500ms;
     z-index: 3;
-    animation: ChooseStory linear;
-    animation-timeline: view();
-    animation-range: 0% cover 20%;
     transition: 1s ease;
 }
 
 div>button#Play {
     position: absolute;
-    top: 1670px;
+    top: 68%;
     left: 130%;
     transition-duration: 500ms;
     z-index: 3;
-    animation: ChooseStory linear;
-    animation-timeline: view();
-    animation-range: 0% cover 20%;
     transition: 1s ease;
-}
-
-/* =================== Responsive =================== */
-@media (max-width: 1200px) {
-    img.BigLogoImg {
-        width: 70vw;
-        height: auto;
-    }
-
-    div>p.subtitle2 {
-        left: 20%;
-        font-size: 72px;
-    }
-
-    button.Button {
-        font-size: 26px;
-        width: 260px;
-        height: 64px;
-    }
-
-    div.game1>button {
-        left: 38%;
-    }
-
-    div.game2>button {
-        left: 38%;
-    }
-
-    div.game3>button {
-        left: 38%;
-    }
-
-    div.Storysummary {
-        width: 520px;
-        height: 360px;
-    }
-
-    div>p#SummaryText {
-        font-size: 72px;
-    }
-
-    div>p#SummaryTextSubtitle {
-        width: 560px;
-        font-size: 22px;
-    }
-}
-
-@media (max-width: 992px) {
-    img.BigLogoImg {
-        width: 80vw;
-        height: auto;
-    }
-
-    div>p.subtitle {
-        left: 10%;
-        font-size: 22px;
-    }
-
-    p.Quote {
-        left: 4%;
-        font-size: 36px;
-    }
-
-    div>p.subtitle2 {
-        left: 16%;
-        font-size: 56px;
-    }
-
-    button.Button {
-        font-size: 22px;
-        width: 220px;
-        height: 58px;
-    }
-
-    div.game1>button,
-    div.game2>button,
-    div.game3>button {
-        left: 36%;
-    }
-
-    div.Storysummary {
-        width: 80vw;
-        height: auto;
-        left: 2000px;
-    }
-
-    div>p#SummaryText {
-        font-size: 56px;
-    }
-
-    div>p#SummaryTextSubtitle {
-        width: 80vw;
-        font-size: 18px;
-    }
-}
-
-@media (max-width: 768px) {
-
-    /* simplify scene effects on mobile */
-    div.cloud,
-    div.cloud2,
-    div.Scloud1,
-    div.Scloud2,
-    div.DTransition {
-        display: none;
-    }
-
-    div>p.subtitle {
-        top: 680px;
-        left: 6%;
-        font-size: 18px;
-    }
-
-    p.Quote {
-        left: 6%;
-        right: 6%;
-        font-size: 26px;
-        text-align: left;
-    }
-
-    div>p.subtitle2 {
-        top: 980px;
-        left: 8%;
-        font-size: 42px;
-    }
-
-    button.Button {
-        font-size: 18px;
-        width: 200px;
-        height: 54px;
-    }
-
-    div.game1>button {
-        top: 1220px;
-        left: 30%;
-    }
-
-    div.game2>button {
-        top: 1380px;
-        left: 30%;
-    }
-
-    div.game3>button {
-        top: 1540px;
-        left: 30%;
-    }
-
-    div.Storysummary {
-        top: 1260px;
-        width: 88vw;
-        height: auto;
-    }
-
-    div>p#SummaryText {
-        top: 1140px;
-        font-size: 40px;
-    }
-
-    div>p#SummaryTextSubtitle {
-        top: 1320px;
-        width: 90vw;
-        font-size: 16px;
-        right: -2000px;
-    }
-
-    div>button#Back {
-        top: 1640px;
-    }
-
-    div>button#Play {
-        top: 1640px;
-    }
-}
-
-@media (max-width: 480px) {
-    img.BigLogoImg {
-        width: 88vw;
-    }
-
-    div>p.subtitle {
-        top: 640px;
-        font-size: 16px;
-    }
-
-    p.Quote {
-        font-size: 22px;
-    }
-
-    div>p.subtitle2 {
-        font-size: 34px;
-    }
-
-    button.Button {
-        width: 180px;
-        height: 50px;
-        font-size: 16px;
-    }
-
-    div.game1>button {
-        left: 26%;
-    }
-
-    div.game2>button {
-        left: 26%;
-    }
-
-    div.game3>button {
-        left: 26%;
-    }
-
-    div.Storysummary {
-        border-width: 6px;
-    }
-}
-
-/* iPhone-specific tuning */
-@media (max-width: 430px) {
-
-    /* iPhone 14/15 Pro Max width */
-    div>p.subtitle2 {
-        top: 78vh;
-        left: 6%;
-        font-size: 36px;
-    }
-
-    div.game1>button {
-        top: 90vh;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    div.game2>button {
-        top: 102vh;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    div.game3>button {
-        top: 114vh;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    div.Storysummary {
-        top: 92vh;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 92vw;
-    }
-
-    div>p#SummaryText {
-        top: 82vh;
-        left: 6%;
-    }
-
-    div>p#SummaryTextSubtitle {
-        top: 96vh;
-        left: 4%;
-        right: auto;
-        width: 92vw;
-    }
-}
-
-@media (max-width: 414px) {
-
-    /* iPhone 11/12/13/14 */
-    div>p.subtitle2 {
-        top: 76vh;
-        font-size: 34px;
-    }
-
-    div.game1>button {
-        top: 88vh;
-    }
-
-    div.game2>button {
-        top: 100vh;
-    }
-
-    div.game3>button {
-        top: 112vh;
-    }
-}
-
-@media (max-width: 390px) {
-
-    /* iPhone 12/13/14 Pro */
-    div>p.subtitle2 {
-        top: 74vh;
-        font-size: 32px;
-    }
-
-    div.game1>button {
-        top: 86vh;
-    }
-
-    div.game2>button {
-        top: 98vh;
-    }
-
-    div.game3>button {
-        top: 110vh;
-    }
-}
-
-@media (max-width: 375px) {
-
-    /* iPhone 8/SE/mini */
-    div>p.subtitle2 {
-        top: 72vh;
-        font-size: 30px;
-    }
-
-    div.game1>button {
-        top: 84vh;
-    }
-
-    div.game2>button {
-        top: 96vh;
-    }
-
-    div.game3>button {
-        top: 108vh;
-    }
-}
-
-@media (max-width: 360px) {
-
-    /* small Android */
-    div>p.subtitle2 {
-        top: 70vh;
-        font-size: 28px;
-    }
-}
-
-/* Laptop 15.6" common widths (1366x768 and 1536x864) */
-@media (min-width: 1360px) and (max-width: 1400px) {
-    div>p.subtitle2 {
-        left: 24%;
-        font-size: 88px;
-    }
-
-    div.game1>button,
-    div.game2>button,
-    div.game3>button {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-}
-
-@media (min-width: 1500px) and (max-width: 1600px) {
-    div>p.subtitle2 {
-        left: 26%;
-        font-size: 96px;
-    }
 }
