@@ -425,10 +425,10 @@ div.summaryStory {
 div.Storysummary {
     position: fixed;
     top: 50%;
-    left: 8%;
+    left: 10%;
     transform: translateY(-50%);
-    width: 450px;
-    height: 320px;
+    width: 500px;
+    height: 350px;
     border-radius: 30px;
     border-style: solid;
     border-color: black;
@@ -441,27 +441,27 @@ div.Storysummary {
 
 div>p#SummaryText {
     position: fixed;
-    top: 25%;
-    right: 15%;
+    top: 22%;
+    right: 18%;
+    width: 500px;
     color: black;
-    font-size: 70px;
+    font-size: 80px;
     font-family: cursive;
     font-weight: bolder;
     z-index: 6;
     transition: 1s ease;
     margin: 0;
-    text-align: left;
+    text-align: center;
 }
 
 div>p#SummaryTextSubtitle {
     position: fixed;
     text-align: left;
     width: 500px;
-    top: 50%;
-    right: 15%;
-    transform: translateY(-50%);
+    top: 42%;
+    right: 18%;
     color: black;
-    font-size: 22px;
+    font-size: 24px;
     font-family: cursive;
     font-weight: bolder;
     z-index: 6;
@@ -473,7 +473,7 @@ div>p#SummaryTextSubtitle {
 div>button#Back {
     position: fixed;
     top: 70%;
-    right: calc(15% + 260px);
+    right: calc(18% + 260px);
     width: 240px;
     height: 58px;
     font-size: 25px;
@@ -489,7 +489,7 @@ div>button#Back:hover {
 div>button#Play {
     position: fixed;
     top: 70%;
-    right: 15%;
+    right: 18%;
     width: 240px;
     height: 58px;
     font-size: 25px;
@@ -532,10 +532,11 @@ div>button#Play:hover {
 
     div>p#SummaryText {
         font-size: 80px;
+        top: 18%;
     }
 
     div>p#SummaryTextSubtitle {
-        width: 600px;
+        width: 500px;
         font-size: 22px;
     }
 }
@@ -580,10 +581,11 @@ div>button#Play:hover {
 
     div>p#SummaryText {
         font-size: 70px;
+        top: 20%;
     }
 
     div>p#SummaryTextSubtitle {
-        width: 550px;
+        width: 450px;
         font-size: 20px;
     }
 
@@ -622,10 +624,11 @@ div>button#Play:hover {
 
     div>p#SummaryText {
         font-size: 60px;
+        top: 20%;
     }
 
     div>p#SummaryTextSubtitle {
-        width: 500px;
+        width: 400px;
         font-size: 18px;
     }
 
