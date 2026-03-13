@@ -425,7 +425,7 @@ div.summaryStory {
 div.Storysummary {
     position: fixed;
     top: 50%;
-    left: 8%;
+    left: 15%;
     transform: translateY(-50%);
     width: 500px;
     height: 350px;
@@ -442,8 +442,8 @@ div.Storysummary {
 div>p#SummaryText {
     position: fixed;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -200px);
+    right: 10%;
+    transform: translateY(-180px);
     color: black;
     font-size: 90px;
     font-family: cursive;
@@ -456,10 +456,10 @@ div>p#SummaryText {
 div>p#SummaryTextSubtitle {
     position: fixed;
     text-align: center;
-    width: 650px;
+    width: 600px;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    right: 10%;
+    transform: translateY(-50%);
     color: black;
     font-size: 24px;
     font-family: cursive;
@@ -473,8 +473,8 @@ div>p#SummaryTextSubtitle {
 div>button#Back {
     position: fixed;
     top: 50%;
-    left: 50%;
-    transform: translate(calc(-50% - 160px), 130px);
+    right: calc(10% + 320px);
+    transform: translateY(110px);
     transition-duration: 500ms;
     z-index: 3;
     transition: 1s ease;
@@ -483,8 +483,8 @@ div>button#Back {
 div>button#Play {
     position: fixed;
     top: 50%;
-    left: 50%;
-    transform: translate(calc(-50% + 160px), 130px);
+    right: 10%;
+    transform: translateY(110px);
     transition-duration: 500ms;
     z-index: 3;
     transition: 1s ease;

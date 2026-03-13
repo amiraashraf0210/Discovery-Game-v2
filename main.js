@@ -44,7 +44,7 @@ button.addEventListener('mouseover', () => {
   div.style.opacity = 1;
   div.style.backgroundColor = 'rgb(0, 74, 74)';
   s1Img1.style.left = "150px";
-  s1Img2.style.left = "1100px";
+  s1Img2.style.left = "1000px";
 });
 
 button.addEventListener('mouseout', () => {
@@ -80,7 +80,7 @@ button2.addEventListener('mouseover', () => {
   div.style.opacity = 1;
   div.style.backgroundColor = 'rgb(49,92,148)';
   s2Img1.style.left = "150px";
-  s2Img2.style.left = "1100px";
+  s2Img2.style.left = "1000px";
 });
 
 button2.addEventListener('mouseout', () => {
