@@ -486,3 +486,80 @@ div>button#Play {
     z-index: 3;
     transition: 1s ease;
 }
+
+
+/* Responsive Design Fixes */
+@media screen and (max-width: 1600px) {
+    img.BigLogoImg {
+        width: 900px;
+        height: 400px;
+    }
+
+    div>p.subtitle {
+        left: 30%;
+        font-size: 26px;
+    }
+
+    p.Quote {
+        font-size: 40px;
+    }
+
+    div>p.subtitle2 {
+        font-size: 80px;
+        left: 30%;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    img.BigLogoImg {
+        width: 800px;
+        height: 350px;
+    }
+
+    div>p.subtitle {
+        left: 28%;
+        font-size: 24px;
+    }
+
+    p.Quote {
+        font-size: 36px;
+    }
+
+    div>p.subtitle2 {
+        font-size: 70px;
+        left: 28%;
+    }
+
+    div.game1>button,
+    div.game2>button,
+    div.game3>button {
+        left: 38%;
+    }
+
+    div.game1>button:hover,
+    div.game2>button:hover,
+    div.game3>button:hover {
+        left: 37.8%;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    img.BigLogoImg {
+        width: 700px;
+        height: 300px;
+    }
+
+    div>p.subtitle {
+        left: 26%;
+        font-size: 22px;
+    }
+
+    p.Quote {
+        font-size: 32px;
+    }
+
+    div>p.subtitle2 {
+        font-size: 60px;
+        left: 26%;
+    }
+}
