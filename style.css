@@ -508,6 +508,21 @@ div>button#Play {
         font-size: 80px;
         left: 30%;
     }
+
+    /* Game Selection Overlay */
+    div.Storysummary {
+        width: 500px;
+        height: 350px;
+    }
+
+    div>p#SummaryText {
+        font-size: 80px;
+    }
+
+    div>p#SummaryTextSubtitle {
+        width: 600px;
+        font-size: 22px;
+    }
 }
 
 @media screen and (max-width: 1366px) {
@@ -541,6 +556,27 @@ div>button#Play {
     div.game3>button:hover {
         left: 37.8%;
     }
+
+    /* Game Selection Overlay */
+    div.Storysummary {
+        width: 450px;
+        height: 320px;
+    }
+
+    div>p#SummaryText {
+        font-size: 70px;
+    }
+
+    div>p#SummaryTextSubtitle {
+        width: 550px;
+        font-size: 20px;
+    }
+
+    button.Button {
+        font-size: 26px;
+        width: 250px;
+        height: 60px;
+    }
 }
 
 @media screen and (max-width: 1280px) {
@@ -561,5 +597,26 @@ div>button#Play {
     div>p.subtitle2 {
         font-size: 60px;
         left: 26%;
+    }
+
+    /* Game Selection Overlay */
+    div.Storysummary {
+        width: 400px;
+        height: 300px;
+    }
+
+    div>p#SummaryText {
+        font-size: 60px;
+    }
+
+    div>p#SummaryTextSubtitle {
+        width: 500px;
+        font-size: 18px;
+    }
+
+    button.Button {
+        font-size: 24px;
+        width: 220px;
+        height: 55px;
     }
 }
