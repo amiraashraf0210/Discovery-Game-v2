@@ -359,9 +359,14 @@ div#menu {
 div.S1_img1 {
     position: absolute;
     top: 1490px;
-    left: -450px;
+    left: -350px;
     transition: left 0.3s ease;
     z-index: 5;
+}
+
+div.S1_img1>img {
+    width: 350px;
+    height: auto;
 }
 
 div.S1_img2 {
@@ -373,36 +378,36 @@ div.S1_img2 {
 }
 
 div.S1_img2>img {
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
 }
 
 div.S2_img1 {
     position: absolute;
     top: 1490px;
-    left: -800px;
-    width: 300px;
-    height: 500px;
+    left: -600px;
+    width: 250px;
+    height: 400px;
     transition: left 0.3s ease;
     z-index: 5;
 }
 
 div.S2_img1>img {
-    width: 110%;
+    width: 100%;
 }
 
 div.S2_img2 {
     position: absolute;
     top: 1490px;
     left: 1900px;
-    width: 300px;
-    height: 500px;
+    width: 250px;
+    height: 400px;
     transition: left 0.3s ease;
     z-index: 5;
 }
 
 div.S2_img2>img {
-    width: 110%;
+    width: 100%;
 }
 
 div.summaryStory {
@@ -420,10 +425,10 @@ div.summaryStory {
 div.Storysummary {
     position: fixed;
     top: 50%;
-    left: 10%;
+    left: 8%;
     transform: translateY(-50%);
-    width: min(600px, 35vw);
-    height: min(400px, 50vh);
+    width: 500px;
+    height: 350px;
     border-radius: 30px;
     border-style: solid;
     border-color: black;
@@ -436,10 +441,10 @@ div.Storysummary {
 
 div>p#SummaryText {
     position: fixed;
-    top: 25%;
-    right: 10%;
+    top: 20%;
+    right: 8%;
     color: black;
-    font-size: clamp(50px, 6vw, 100px);
+    font-size: 90px;
     font-family: cursive;
     font-weight: bolder;
     z-index: 6;
@@ -450,24 +455,24 @@ div>p#SummaryText {
 div>p#SummaryTextSubtitle {
     position: fixed;
     text-align: center;
-    width: min(700px, 40vw);
+    width: 650px;
     top: 50%;
-    right: 10%;
+    right: 8%;
     transform: translateY(-50%);
     color: black;
-    font-size: clamp(18px, 1.5vw, 26px);
+    font-size: 24px;
     font-family: cursive;
     font-weight: bolder;
     z-index: 6;
     transition: 1s ease;
     margin: 0;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 div>button#Back {
     position: fixed;
-    top: 72%;
-    right: calc(10% + 220px);
+    top: 75%;
+    right: calc(8% + 320px);
     transition-duration: 500ms;
     z-index: 3;
     transition: 1s ease;
@@ -475,8 +480,8 @@ div>button#Back {
 
 div>button#Play {
     position: fixed;
-    top: 72%;
-    right: 10%;
+    top: 75%;
+    right: 8%;
     transition-duration: 500ms;
     z-index: 3;
     transition: 1s ease;
