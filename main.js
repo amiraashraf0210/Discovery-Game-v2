@@ -64,21 +64,13 @@ button.addEventListener('click', () => {
   Game1 = true;
   summaryStory.style.display = 'block';
   summaryStory.style.backgroundColor = 'rgb(0, 74, 74)';
-  setTimeout(() => {
-    storySummary.style.left = "150px";
-    storyTitle.style.right = "360px";
-    storySubtitle.style.right = "160px";
-    BackButton.style.left = "71%";
-    BackButton.style.backgroundColor = "brown";
-    PlayButton.style.left = "52%";
-    PlayButton.style.backgroundColor = "brown";
-  }, 50);
   storyTitle.innerHTML = "Stitch";
   storyTitle.style.color = "White";
   storySubtitle.innerHTML = "Stitch embarks on an adventurous quest through a dense forest, discovers an ancient temple, and uncovers a hidden treasure in a mysterious cave filled with puzzles and secrets.";
   storySubtitle.style.color = "White";
   storySummary.style.backgroundImage = "url('Image/Story1Image.jpg')";
-
+  BackButton.style.backgroundColor = "brown";
+  PlayButton.style.backgroundColor = "brown";
 });
 
 // Story One /////////////////////////////////////
@@ -108,21 +100,13 @@ button2.addEventListener('click', () => {
   Game2 = true;
   summaryStory.style.display = 'block';
   summaryStory.style.backgroundColor = 'rgb(49,92,148)';
-  setTimeout(() => {
-    storySummary.style.left = "150px";
-    storyTitle.style.right = "360px";
-    storySubtitle.style.right = "160px";
-    BackButton.style.left = "71%";
-    BackButton.style.backgroundColor = "brown";
-    PlayButton.style.left = "52%";
-    PlayButton.style.backgroundColor = "brown";
-  }, 50);
   storyTitle.innerHTML = "Conan";
   storyTitle.style.color = "White";
   storySubtitle.innerHTML = "A game inspired by Conan, featuring thrilling puzzles, evidence analysis, and character interrogations to guess the culprit and solve the mystery.";
   storySubtitle.style.color = "White";
   storySummary.style.backgroundImage = "url('Image/Story2Image.jpg')";
-
+  BackButton.style.backgroundColor = "brown";
+  PlayButton.style.backgroundColor = "brown";
 });
 
 // Story Two /////////////////////////////////////
@@ -151,21 +135,13 @@ button3.addEventListener('click', () => {
   Game3 = true;
   summaryStory.style.display = 'block';
   summaryStory.style.backgroundColor = 'rgb(0, 124, 17)';
-  setTimeout(() => {
-    storySummary.style.left = "150px";
-    storyTitle.style.right = "290px";
-    storySubtitle.style.right = "160px";
-    BackButton.style.left = "71%";
-    BackButton.style.backgroundColor = "brown";
-    PlayButton.style.left = "52%";
-    PlayButton.style.backgroundColor = "brown";
-  }, 50);
   storyTitle.innerHTML = "Hangman";
   storyTitle.style.color = "White";
   storySubtitle.innerHTML = "The classic Hangman game where you guess letters to complete the word before the hangman is drawn. A challenge for your wit and language skills.";
   storySubtitle.style.color = "White";
   storySummary.style.backgroundImage = "url('Image/Story3Image.jpg')";
-
+  BackButton.style.backgroundColor = "brown";
+  PlayButton.style.backgroundColor = "brown";
 });
 
 // Unified Back Button Handler
@@ -174,16 +150,7 @@ BackButton.addEventListener('click', () => {
   Game1 = false;
   Game2 = false;
   Game3 = false;
-
-  storySummary.style.left = "2000px";
-  storyTitle.style.right = "-2000px";
-  storySubtitle.style.right = "-2000px";
-  BackButton.style.left = "150%";
-  PlayButton.style.left = "130%";
-
-  setTimeout(() => {
-    summaryStory.style.display = 'none';
-  }, 1000);
+  summaryStory.style.display = 'none';
 });
 
 ///////////////////////////////////////////////////////////

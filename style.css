@@ -418,13 +418,12 @@ div.summaryStory {
 }
 
 div.Storysummary {
-    /* left 100 / -800 left */
-    position: absolute;
+    position: fixed;
     top: 50%;
-    left: 2000px;
+    left: 10%;
     transform: translateY(-50%);
-    width: 600px;
-    height: 400px;
+    width: min(600px, 35vw);
+    height: min(400px, 50vh);
     border-radius: 30px;
     border-style: solid;
     border-color: black;
@@ -436,13 +435,11 @@ div.Storysummary {
 }
 
 div>p#SummaryText {
-    /* right 400 */
-    position: absolute;
-    top: 30%;
-    right: -2000px;
-    transform: translateY(-50%);
+    position: fixed;
+    top: 25%;
+    right: 10%;
     color: black;
-    font-size: 100px;
+    font-size: clamp(50px, 6vw, 100px);
     font-family: cursive;
     font-weight: bolder;
     z-index: 6;
@@ -450,17 +447,15 @@ div>p#SummaryText {
     margin: 0;
 }
 
-
 div>p#SummaryTextSubtitle {
-    /* right 160*/
-    position: absolute;
+    position: fixed;
     text-align: center;
-    width: 700px;
+    width: min(700px, 40vw);
     top: 50%;
-    right: -2000px;
+    right: 10%;
     transform: translateY(-50%);
     color: black;
-    font-size: 26px;
+    font-size: clamp(18px, 1.5vw, 26px);
     font-family: cursive;
     font-weight: bolder;
     z-index: 6;
@@ -470,18 +465,18 @@ div>p#SummaryTextSubtitle {
 }
 
 div>button#Back {
-    position: absolute;
-    top: 68%;
-    left: 150%;
+    position: fixed;
+    top: 72%;
+    right: calc(10% + 220px);
     transition-duration: 500ms;
     z-index: 3;
     transition: 1s ease;
 }
 
 div>button#Play {
-    position: absolute;
-    top: 68%;
-    left: 130%;
+    position: fixed;
+    top: 72%;
+    right: 10%;
     transition-duration: 500ms;
     z-index: 3;
     transition: 1s ease;
